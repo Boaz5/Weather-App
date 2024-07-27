@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: gray;
+    color:white;
+    background-image: url(weather.jpg);
+    background-size: cover;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.main-container{
+    display: block;
+    width: 50%;
+    height: 650px;
+    max-height: 1000px;
+    margin-top: 10vh;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.705);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.185);
+}
+
+/* 
+.main-container::-webkit-scrollbar{
+    width: 10px;
+}
+
+.main-container::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0, 0);
+}
+*/
+
+.tab-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0 40px;
+    margin: 30px 10% 10px 75%;
+} 
+
+.tabs{
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+}
+
+.tabs:hover{
+    transform: scale(1.03);
+}
+
+
+.tabs::after{
+    width: 0;
+    height: 20px;
+    background: rgb(0, 128, 68);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.6s;
+}
+
+.tabs.active-tab::after{
+    width: 60%
+}
+
+.home-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.form-col{
+    flex-basis: 60%;
+}
+
+.form-css{
+    margin-left: 20px;
+}
+
+.label-css{
+    font-size: 25px;
+}
+.input-css{
+    flex-wrap: wrap;
+    border-radius:10px;
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+
+.data-col{
+    flex-basis: 40%;
+}
