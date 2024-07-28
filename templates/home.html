@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Weather App
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="tab-pages active-page" id="Home">
+        <div class="home-container">
+            <div class="form-col">
+                <form class = "form-css" action="getWeather" method="post">
+                    <label for="getWeather" class="label-css">Enter a City:</label>
+                    <input autocomplete="off" id="city" name="city" placeholder="Enter a City" type="text" class="input-css">
+                    <br></br>
+                    <br></br>
+                    <label for="getWeather" class="label-css" style="margin-left:140px;">Or</label>
+                    <br></br>
+                    <br></br>
+                    <label for="getWeather" class="label-css">Enter a Zip:</label>
+                    <input autocomplete="off" id="zip" name="zip" placeholder="Enter a Zip" type="text" class="input-css">
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+            <div class="data-col">
+                <div class="location">location</div>
+                <div class="information">Temperature</div>
+                <div class="information">Humidity</div>
+                <div class="information">Weather</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
