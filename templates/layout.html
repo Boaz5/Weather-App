@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class = "container">
         <div class = "main-container">
             <div class="tab-header">
@@ -24,10 +25,8 @@
 
 
 
-
-
-
 <script>
+    // function for traversing between the home and logs tab
     let tabs = document.getElementsByClassName("tabs");
     let tabPages = document.getElementsByClassName("tab-pages");
 
@@ -41,8 +40,40 @@
         }
 
         event.currentTarget.classList.add("active-tab");
-        document.getElementById(tabName).classList.add("active-page")
+        document.getElementById(tabName).classList.add("active-page");
     }
+
+    // functions for traversing through other info of weather
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function current(n){
+        showSlides(slideIndex = n)
+    }
+
+    function traverse(n){
+        showSlides(slideIndex += n)
+    }
+
+    function showSlides(n){
+        let slides = document.getElementsByClassName("slides");
+
+        // condition to make sure slide's index doesn't go over the boundary
+        if (n > slides.length){ 
+            slideIndex = 1
+        }
+
+        // condition to make sure slide's index doesn't go below the boundary
+        if (n < 1){
+            slideIndex = slides.length
+        }
+
+        for (let index = 0; index < slides.length; index++){
+            slides[index].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+
 
 
 

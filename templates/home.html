@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'layout.html' %}
 
 {% block title %}
     Weather App
@@ -7,29 +7,55 @@
 
 {% block content %}
 
-    <div class="tab-pages active-page" id="Home">
-        <div class="home-container">
-            <div class="form-col">
-                <form class = "form-css" action="getWeather" method="post">
-                    <label for="getWeather" class="label-css">Enter a City:</label>
-                    <input autocomplete="off" id="city" name="city" placeholder="Enter a City" type="text" class="input-css">
+    <div class = "tab-pages active-page" id = "home">
+        <div class = "home-container">
+            <div class = "form-col">
+                <form class = "form-css" action = "/" method = "post">
+                    <label for = "getWeather" class = "label-css">Enter a City:</label>
+                    <input autocomplete = "off" id = "city" name = "city" placeholder = "Enter a City" type = "text" class = "input-css">
                     <br></br>
                     <br></br>
-                    <label for="getWeather" class="label-css" style="margin-left:140px;">Or</label>
+                    <label for = "getWeather" class = "label-css" style = "margin-left:140px;">Or</label>
                     <br></br>
                     <br></br>
-                    <label for="getWeather" class="label-css">Enter a Zip:</label>
-                    <input autocomplete="off" id="zip" name="zip" placeholder="Enter a Zip" type="text" class="input-css">
-                    <button type="submit" class="btn">Search</button>
+                    <label for = "getWeather" class = "label-css">Enter a Zip:</label>
+                    <input autocomplete = "off" id = "zip" name = "zip" placeholder = "Enter a Zip" type = "text" class = "input-css">
+                    <button type = "submit" class = "btn">Search</button>
                 </form>
             </div>
-            <div class="data-col">
-                <div class="location">location</div>
-                <div class="information">Temperature</div>
-                <div class="information">Humidity</div>
-                <div class="information">Weather</div>
+            <div class = "data-col">
+                <h1 class = "location">{{ location }}</h1>
+                <div class = "informations-container">
+                    <div class = "information">
+                        <h2>Weather:</h2>
+                        <p>{{ infos.weather }}</p>
+                    </div>
+                    <div class = "information">
+                        <h2>Temperature:</h2>
+                        <p>{{ infos.temperature }}</p>
+                    </div>
+                    <div class = "information">
+                        <h2>Humidity:</h2>
+                        <p>{{ infos.humidity }}</p>
+                    </div>
+                    <div class = "information">
+                        <div class = "slides">
+                            <h2>Min Temperature:</h2>
+                            <p>{{ infos.min_temp }}</p>
+                        </div>
+                        <div class = "slides">
+                            <h2>Max Temperature:</h2>
+                            <p>{{ infos.max_temp }}</p>
+                        </div>
+                        <a class = "prev" onclick="traverse(-1)">&#10094;</a>
+                        <a class = "next" onclick="traverse(1)">&#10095;</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class = "tab-pages" id = "logs">
+    
     </div>
 
 {% endblock %}
