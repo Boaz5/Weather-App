@@ -76,10 +76,16 @@
             </thead>
             <tbody>
                 {% for log in logs %}
-                    <tr>
+                    <tr class = "expand">
                         <td>{{ log.date }}</td>
                         <td>{{ log.status }}</td>
                         <td>{{ log.time }} Local Time</td>
+                    </tr>
+                    <tr class = "expand-infos">
+                        <td colspan = "3">
+                            <div class = "expand-info">Weather: {{log.weather}}</div>
+                            <div class = "expand-info">Temperature: {{log.temperature}}</div>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
