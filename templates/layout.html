@@ -78,8 +78,37 @@
     }
 
 
+    // function to expand the rows for logs' table
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".expandable").forEach(row => {
+            row.addEventListener("click", () => {
+                let nextRow = row.nextElementSibling;
+                if (nextRow && nextRow.classList.contains("expand-infos")) {
+                    if (nextRow.style.display == "none"){
+                        nextRow.style.display = "table-row";
+                    }else{
+                        nextRow.style.display = "none";
+                    }
+                }
+            });
+        });
+    });
+    
+    // function to change the css depending on if there's a weather icon or nextRow to format the tags to align
+    document.addEventListener("DOMContentLoaded", () => {
+        // Select the specific element by ID and img
+        let icon = document.getElementById("icon");
 
+        if (icon){
+            let imgSrc = icon.getAttribute("src");
 
+            if (imgSrc && imgSrc !== ""){
+                icon.style.display = "block";
+            }else{
+                icon.style.display = "none";
+            }
+        }
+    });
 </script>
 </body>
 

@@ -13,6 +13,7 @@ def home():
         'status': "None",
         'searched': "",
         'weather': "",
+        'weatherIcon': "",
         'temperature': "",
         'humidity': "",
         'min_temp': "",
@@ -41,6 +42,10 @@ def home():
             infos['humidity'] = f"{data['main']['humidity']}%"
             infos['min_temp'] = f"{data['main']['temp_min']}°F"
             infos['max_temp'] = f"{data['main']['temp_max']}°F"
+            
+            # Get the Icon code for the weather and store the source img url into weather icon
+            iconCode = data['weather'][0]['icon']
+            infos['weatherIcon'] = f"http://openweathermap.org/img/wn/{iconCode}@2x.png"
             
             # Get the current local time
             timeInfo = getTime()

@@ -31,7 +31,8 @@
                 <div class = "informations-container">
                     <div class = "information">
                         <h2>Weather:</h2>
-                        <p>{{ infos.weather }}</p>
+                        <p></p>
+                        <img class = "icon" src = "{{ infos.weatherIcon }}" alt = "" id = "icon">
                     </div>
                     <div class = "information">
                         <h2>Temperature:</h2>
@@ -76,15 +77,16 @@
             </thead>
             <tbody>
                 {% for log in logs %}
-                    <tr class = "expand">
+                    <tr class = "expandable">
                         <td>{{ log.date }}</td>
                         <td>{{ log.status }}</td>
                         <td>{{ log.time }} Local Time</td>
                     </tr>
                     <tr class = "expand-infos">
                         <td colspan = "3">
-                            <div class = "expand-info">Weather: {{log.weather}}</div>
-                            <div class = "expand-info">Temperature: {{log.temperature}}</div>
+                            <div class = "expand-info">
+                                The Weather at that time is {{log.weather}} with a Temperature of {{log.temperature}}
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}

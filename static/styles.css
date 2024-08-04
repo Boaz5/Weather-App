@@ -153,37 +153,54 @@ body {
 }
 
 .information {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; 
     position: relative;
     overflow: hidden;
     margin-top: 60px;
     margin-bottom: 50px;
+    text-align: center; 
 }
 
 .information h2 {
-    text-align: center;
     font-size: 21px;
     color: rgba(115, 255, 0, 0.945);
+    margin: 0;
+}
+
+img.icon {
+    display: none;
+    margin-top: -80px;
+    transform: translateY(20%);
 }
 
 .information p {
-    text-align: center;
     margin-top: 40px;
     font-size: 18px;
     color: rgb(58, 161, 187);
 }
 
 /* CSS for the traverse buttons */
+
+.slides{
+    position: relative;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 30%;
-    padding: 16px;
+    top: 50%; 
+    transform: translateY(-20%); /* Changes vertical positioning */
+    padding: 15px;
     background: rgba(0, 0, 0, 0.157);
     width: 8px;
     color: rgb(255, 81, 0);
 }
 
 .prev {
+    left: 0;
     border-radius: 8px 2px 2px 8px;
 }
 
@@ -239,8 +256,24 @@ table tbody tr:nth-of-type(even) {
 
 table tbody tr:hover{
     background-color: rgba(241, 241, 241, 0.459);
+    cursor: pointer;
 }
 
+
+/* CSS for expanding the row */
+.expand-infos{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+.expand-infos:hover{
+    cursor: default;
+}
+
+.expand-info{
+    text-align: center;
+    font-size: 16px;
+}
 
 /* CSS for the Scrollbar */
 .main-container::-webkit-scrollbar {
@@ -248,7 +281,6 @@ table tbody tr:hover{
 }
 
 .main-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.534);
     border-radius: 0 12px 12px 0;
 }
 
