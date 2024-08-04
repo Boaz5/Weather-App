@@ -8,7 +8,9 @@
 {% block content %}
 
     <div class = "tab-pages active-page" id = "home">
+        {# Home page #} 
         <div class = "home-container">
+        {# Left side of the home page that shows all the form inputs #} 
             <div class = "form-col">
                 <form class = "form-css" action = "/" method = "post">
                     <label for = "getWeather" class = "label-css">Enter a City:</label>
@@ -23,8 +25,9 @@
                     <button type = "submit" class = "btn">Search</button>
                 </form>
             </div>
+        {# Right side of the home page that shows all the data #}  
             <div class = "data-col">
-                <h1 class = "location">{{ location }}</h1>
+                <h1 class = "status">{{ infos.status }}</h1>
                 <div class = "informations-container">
                     <div class = "information">
                         <h2>Weather:</h2>
@@ -54,8 +57,33 @@
             </div>
         </div>
     </div>
+{# Logs page #}
     <div class = "tab-pages" id = "logs">
-    
+        {# Button to clear logs #}
+        <div class = "clear-logs">
+            <form action = "/clear_logs" method = "post">
+                <button type = "submit"> Clear Logs </button>
+            </form>
+        </div>
+        {# table showcasing the logs#}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                    <tr>
+                        <td>{{ log.date }}</td>
+                        <td>{{ log.status }}</td>
+                        <td>{{ log.time }} Local Time</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock %}
