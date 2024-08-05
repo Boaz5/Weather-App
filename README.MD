@@ -9,6 +9,7 @@
 - [Setting Up Python Virtual Environment](#Virtual-Environment-Setup)
 - [Setting Up .env File](#.env-Setup)
 - [Installation](#Installation)
+- [Run](#Run)
 
 ## OpenWeatherMap API Setup
 
@@ -23,8 +24,8 @@
 '''sh
 pip install virtualenv
 '''
-* Navigate to the directory that you want this application to be in and run 
-'''
+* Navigate to the directory that you want this application to be in and run in the Visual Studio Terminal
+'''sh
 On Windows:
 python -m venv <environment name>
 On Mac/Linux:
@@ -42,5 +43,25 @@ A good habit to have to make your program safer is to store all your API keys in
 
 ## Installation
 
-Use pip or pip3 to install all the dependencies
+* Clone the repository by entering this in the terminal
+'''sh
+git clone https://github.com/Boaz5/Weather-App.git
+'''
+* Use pip or pip3 to install all the dependencies
+'''sh
+pip install flask
+pip install python-dotenv
+pip install requests
+or you can just:
+pip install -r requirements.txt
+'''
+* Place your saved OpenWeatherMap API key in the environment variable or .env file
 
+## Run
+
+To Run you can type in the terminal after activating your virtual environment
+'''sh
+flask run
+or
+python app.py # To go into debug mode
+'''
