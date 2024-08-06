@@ -29,14 +29,15 @@ pip install virtualenv
 On Windows:
 python -m venv <environment name>
 On Mac/Linux:
-python3 -m venv <environment name'
+python3 -m venv <environment name>
 example: python -m venv .venv
 ```
 **note** Don't include the <>
 * Activate the virtual environment
-  * 'venv name'\Scripts\activate (On Windows)
-  * source <venv name>/bin/activate
-
+```sh
+  <venv name>\Scripts\activate (On Windows)
+  source <venv name>/bin/activate (On Mac/Linux)
+```
 ## .env Setup
 
 A good habit to have to make your program safer is to store all your API keys in a file called .env
